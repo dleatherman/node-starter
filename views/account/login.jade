@@ -1,0 +1,18 @@
+extends ../layout
+
+block content
+  .col-sm-4.col-sm-offset-4
+    .page-header
+      h3 Welcome back
+    form(method='POST')
+      input(type='hidden', name='_csrf', value=_csrf)
+      .form-group
+        label.control-label(for='email') Email
+        input.form-control(type='email', name='email', id='email', placeholder='', autofocus=true)
+      .form-group
+        label.control-label(for='password') Password
+        input.form-control(type='password', name='password', id='password', placeholder='')
+      .form-group
+        button.btn.btn-primary(type='submit')
+          | Log in
+        a.btn.btn-link(href='/forgot') Forgot your password?

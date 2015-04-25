@@ -1,0 +1,12 @@
++nav('Job Listings', 'top-navigation', 'default navbar-static-top')
+  ul.nav.navbar-nav
+    +nav_item('/') Home
+  ul.nav.navbar-nav.navbar-right
+    if !user
+      +nav_item('/login') Log In
+      +nav_item('/register') Register
+    else
+      +nav_item_dropdown('#')(label='#{user.profile.name || user.email || user.id}')
+        +nav_header My account
+        +nav_item('/account') Settings
+        +nav_item('/logout') Log out
